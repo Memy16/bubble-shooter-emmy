@@ -7,6 +7,10 @@ window.onload = function() {
     let fpstime = 0;
     let framecount = 0;
     let fps = 0;
+
+    let backgroundMusic = new Audio('assets/sounds/dynamite-pista.mp3');
+    backgroundMusic.loop = true;
+
     
     let initialized = false;
     
@@ -106,6 +110,16 @@ window.onload = function() {
         
         return loadedimages;
     }
+
+    document.getElementById('music-toggle').addEventListener('click', toggleMusic);
+    function toggleMusic() {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+        } else {
+            backgroundMusic.pause();
+        }
+    }
+
     
     function init() {
         images = loadImages(["assets/img/bubble-sprites.png"]);
@@ -274,6 +288,9 @@ window.onload = function() {
                     if (tile.alpha == 0) {
                         tile.type = -1;
                         tile.alpha = 1;
+
+                        let bubblePopSound = new Audio('assets/sounds/pop.mp3');
+                        bubblePopSound.play();
                     }
                 }                
             }
@@ -297,6 +314,9 @@ window.onload = function() {
                             tile.type = -1;
                             tile.shift = 0;
                             tile.alpha = 1;
+
+                            let bubblePopSound = new Audio('assets/sounds/pop.mp3');
+                            bubblePopSound.play();
                         }
                     }
 

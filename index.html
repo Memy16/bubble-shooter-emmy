@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="icon" href="./assets/img//logo-bubble-shooter-emmy.ico">
         <title>Bubble Shooter</title>
@@ -9,7 +10,16 @@
     </head>
     <body>
         <main>
-            <canvas id="viewport" width="628" height="628"></canvas>
+            <div class="game-container">
+                <canvas id="viewport" width="628" height="628"></canvas>
+                <div class="music-control">
+                    <p>Música</p>
+                    <label class="switch">
+                        <input type="checkbox" id="music-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
         </main>
         <footer>
             <h6>
